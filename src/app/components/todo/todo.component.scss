@@ -33,7 +33,7 @@ $header-height: 70px;
             width: 60%;
             bottom: 0;
             left: 0;
-            background: linear-gradient(0deg, white 20%, transparent);
+            background: linear-gradient(0deg, white 20%, rgba(255, 255, 255, 0));
         }
 
         .group-container {
@@ -57,7 +57,7 @@ $header-height: 70px;
             width: 40%;
             height: 100%;
             border-radius: 20px 0 0 0;
-            background-color: red;
+            background: $primary-gradient;
             box-shadow: -15px 0 30px -30px black;
         }        
 

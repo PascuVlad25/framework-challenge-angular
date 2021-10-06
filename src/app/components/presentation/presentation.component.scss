@@ -3,10 +3,11 @@
 $dark-background-width: 65vw;
 $text-color: #fff;
 $gradient-background-gradient: linear-gradient(60deg, #dd0031, #f1683e);
-$glow-animation-1-base-scale: 2;
-$glow-animation-2-base-scale: 3;
 
 :host {
+    --glow-animation-1-base-scale: 2;
+    --glow-animation-2-base-scale: 3;
+
     height: 100vh;
     display: block;
     position: relative;
@@ -47,13 +48,14 @@ $glow-animation-2-base-scale: 3;
 
         .glow-1 {
             position: absolute;
+            z-index: 4;
             border-radius: 50%;
             box-shadow: 0 0 80px 30px #fff,  
                         0 0 80px 70px $secondary-color, 
                         0 0 300px 90px $primary-color; 
-            transform: scale($glow-animation-1-base-scale);
+            transform: scale(var(--glow-animation-1-base-scale));
             opacity: 0.8;
-            animation: glowAnimation1 10s linear 6s infinite;
+            animation: glowAnimation1 8s linear 6s infinite;
         }  
 
         .glow-2 {
@@ -65,34 +67,15 @@ $glow-animation-2-base-scale: 3;
                         0 0 70px 60px $secondary-color, 
                         0 0 200px 60px $primary-color;
             border-radius: 50%;
-            transform: scale($glow-animation-2-base-scale);
+            transform: scale(var(--glow-animation-2-base-scale));
             opacity: 0.8;
-            animation: glowAnimation3 12s linear 6s infinite;
+            animation: glowAnimation2 10s linear 6s infinite;
         }
     
         .dark-background {
             height: 100vh;
             width: 100vw;
-            // width: $dark-background-width;
             background-color: $dark-background-color;
-        }
-    
-        .gradient-background {
-            // height: 100vh;
-            // width: calc(100vw - #{$dark-background-width});
-            // background: $gradient-background-gradient;
-        }
-    }
-
-    @media (max-width: $mobile) {
-        .background {
-            .dark-background {
-                width: 100vw;
-            }
-        
-            .gradient-background {
-                display: none;
-            }
         }
     }
 }
@@ -132,5 +115,5 @@ $glow-animation-2-base-scale: 3;
     }  
 }
 
-@include glow-animation(glowAnimation1, $glow-animation-1-base-scale);
-@include glow-animation(glowAnimation3, $glow-animation-2-base-scale);
+@include glow-animation(glowAnimation1, var(--glow-animation-1-base-scale));
+@include glow-animation(glowAnimation2, var(--glow-animation-2-base-scale));
