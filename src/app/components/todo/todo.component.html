@@ -1,0 +1,29 @@
+<div class="todo-header">
+    <span class="todo-title">1. Todo List</span>
+</div>
+<div class="container">
+    <div class="group-container">
+        <!-- <div class="card" [ngClass]="card.color" *ngFor="let card of cards">
+            <div class="color-border"></div>
+            <div>
+                <div class="title">{{ card.title }}</div>
+                <div class="description">{{ card.description }}</div>
+                <span class="icon"></span>
+            </div>
+        </div> -->
+        <!-- <div class="card add-card" (click)="addCard()">
+            +
+        </div> -->
+    
+        <app-todo-group 
+            *ngFor="let group of getGroups()"
+            [title]="group.title"
+            [todos]="group.todos"
+            class="todo-group"
+        ></app-todo-group>
+        <div class="bottom-fade"></div>
+    </div>
+    <div class="add-container">
+
+    </div>
+</div>

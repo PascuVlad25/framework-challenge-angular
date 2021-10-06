@@ -1,0 +1,17 @@
+<div class="content">
+    <div class="details-container">
+        <div class="title">The Game</div>
+        <div class="buttons-container">
+            <span *ngIf="!hasGameStarted()" class="start-button" (click)="startBotGame()">
+                Start Game <br> Player vs Bot
+            </span>
+            <span *ngIf="!hasGameStarted()" class="start-button" (click)="startPlayerGame()">
+                Start Game <br> Player vs Player
+            </span>
+        </div>
+    </div>
+    <div class="game-container">
+        <app-game></app-game>
+    </div>
+</div>
+<div class="background"></div>

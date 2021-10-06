@@ -1,0 +1,8 @@
+<div class="slide-buttons-container">
+    <span *ngIf="isAvailablePrevious()" (click)="previousPage()" class="slide-button">
+        <fa-icon [icon]="arrowLeft"></fa-icon>
+    </span>
+    <span *ngIf="isAvailableNext()" (click)="nextPage()" class="slide-button">
+        <fa-icon [icon]="arrowRight"></fa-icon>
+    </span>
+</div>

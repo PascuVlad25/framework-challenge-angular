@@ -1,0 +1,36 @@
+$card-height: 60px;
+$card-width: 350px;
+$card-spacing: 15px;
+
+.card {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    height: $card-height;
+    margin: $card-spacing;
+    box-shadow: 0px 5px 20px -5px #00000033;
+
+    .color-border {
+        height: 90%;
+        width: 5px;
+        margin: 5% 10px;
+        border-radius: 10px;
+        background-color: blue;
+    }
+
+    &.add-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        background-color: gray;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: rgb(139, 139, 139);
+        }
+    }
+}

@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {
+    scroll-behavior: smooth;
+    
+    body {
+        margin: 0;
+    }
+}
+
+.arrow-down {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    background-image: url('/assets/icons/chevron_down.svg');
+    background-size: contain;
+    cursor: pointer;
+    animation: floating-arrow 3s ease-in-out infinite;
+}
+
+@keyframes floating-arrow {
+    0% {
+        transform: translateY(0);
+    }
+    50% {        
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Variables */
+$primary-color: #DD0031;
+$secondary-color: #f05526;
+$gradient-background-gradient: linear-gradient(60deg, $primary-color, $secondary-color);
+
+
+$dark-background-color: #15141c;
+
+
+/* Media queries */
+$mobile: 500px;
+$tablet: 900px;

@@ -1,0 +1,19 @@
+.slider-container {
+    position: fixed;
+    z-index: 5;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+}
+
+.main-container {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: rgb(236, 236, 236);
+
+    .carousel-container {
+        display: flex;
+        height: 100vh;
+    }
+}

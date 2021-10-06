@@ -1,0 +1,45 @@
+
+@import 'src/styles';
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap');
+
+$text-color: #ffffff;
+
+.framework-name-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $text-color;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    // font-family: 'DM Serif Display', serif;
+    font-size: 10rem;
+    letter-spacing: 1rem;
+
+    .letter {
+        z-index: 5;
+        margin-top: 15%;
+        font-size: 10vw;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .logo {
+        width: 25%;
+        height: 55%;
+        position: absolute;
+        z-index: 0;
+        display: flex;
+
+        .bottom-fade {
+            box-shadow: inset 0px -350px 100px -75px $dark-background-color;
+            position: absolute;
+            z-index: 3;
+            width: 100%;
+            height: 100%;
+        }
+
+        .angular-logo {
+            width: 100%;
+            transform: translateY(-15px);
+        }
+    }
+}

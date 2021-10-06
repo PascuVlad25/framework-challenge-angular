@@ -1,0 +1,91 @@
+@import 'src/styles';
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@600&display=swap');
+$card-spacing: 15px;
+$header-height: 70px;
+
+:host {
+    height: 100vh;
+    display: block;
+    position: relative;
+    font-family: 'Fira Sans', sans-serif;
+    background-color: white;
+
+    .todo-header {
+        height: $header-height;
+        width: 100vw;
+        box-sizing: border-box;
+        padding: 25px 0 10px 30px;
+
+        .todo-title {
+            font-size: 32px;
+            font-weight: 600;
+        }
+    }
+
+    .container {
+        display: flex;
+        height: calc(100vh - #{$header-height});
+        position: relative;
+
+        .bottom-fade {
+            position: absolute;
+            height: 100px;
+            width: 60%;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(0deg, white 20%, transparent);
+        }
+
+        .group-container {
+            width: 60%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            box-sizing: border-box;
+            overflow: auto;
+            z-index: 1;
+            padding: $card-spacing;
+            padding-bottom: 50px;
+
+            .todo-group {
+                width: 50%;
+            }
+        }
+
+        .add-container {
+            width: 40%;
+            height: 100%;
+            border-radius: 20px 0 0 0;
+            background-color: red;
+            box-shadow: -15px 0 30px -30px black;
+        }        
+
+        @media (max-width: $tablet) {
+            .group-container {
+                width: 50%;
+
+                .todo-group {
+                    width: 100%;
+                }
+            }
+
+            .add-container, .bottom-fade {
+                width: 50%;
+            }
+        }
+
+        @media (max-width: $mobile) {
+            .group-container, .bottom-fade {
+                width: 100%;
+            }
+            .add-container {
+                display: none;
+            }
+        } 
+    }
+
+    .arrow-down.black {
+        background-image: url('/assets/icons/chevron_down_black.svg');
+    }
+}

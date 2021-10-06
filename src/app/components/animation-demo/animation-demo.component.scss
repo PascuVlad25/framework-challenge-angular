@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@600&display=swap');
+$screen-height: 216px;
+$screen-width: 384px;
+$frame-border: 5px;
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    overflow: hidden;
+
+    .animation-container {
+        height: $screen-height;
+        width: $screen-width;
+        position: relative;
+
+        .frame {
+            top: -$frame-border;
+            left: -$frame-border;
+            position: absolute;
+            z-index: 2;
+            height: $screen-height;
+            width: $screen-width;
+            border: $frame-border solid black;
+
+        }
+
+        .screens-container {
+            top: 0;
+            left: 0;
+            position: absolute;
+            z-index: 1;
+            display: flex;
+            animation: slide 6s infinite;
+
+            .screen {
+                height: $screen-height;
+                width: $screen-width;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 24px;
+                font-family: 'Fira Sans', sans-serif;
+                animation: scale 3s infinite cubic-bezier(0,1,1,1);
+
+                &.screen-1 {
+                    background-color: rgb(236, 56, 56);
+                }
+
+                &.screen-2 {
+                    background-color: rgb(61, 61, 238);
+                }
+            }
+        }
+    }
+}
+
+@keyframes scale {
+  25% {
+    animation-timing-function: cubic-bezier(1,0,1,1);
+    transform: scale(0.8);
+    border-radius: 10px;
+  }
+  50% {
+    animation-timing-function: cubic-bezier(0,1,1,1);
+    transform: scale(1);
+    border-radius: 0;
+  }
+}
+
+@keyframes slide {
+  25% {
+    animation-timing-function: ease-out;
+    transform: translateX(-#{$screen-width});
+  }
+  50% {
+    transform: translateX(-#{$screen-width});
+  }
+  75% {
+    animation-timing-function: ease-out;
+    transform: translateX(0);
+  }
+}

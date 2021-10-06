@@ -1,0 +1,18 @@
+
+.matrix-container {
+    display: flex;
+    flex-direction: column;
+
+    .line {
+        display: flex;
+
+        .dot {
+            display: block;
+            width: 3px;
+            height: 3px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 15px;
+        }
+    }
+}

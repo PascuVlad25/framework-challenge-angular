@@ -1,0 +1,136 @@
+@import 'src/styles';
+
+$dark-background-width: 65vw;
+$text-color: #fff;
+$gradient-background-gradient: linear-gradient(60deg, #dd0031, #f1683e);
+$glow-animation-1-base-scale: 2;
+$glow-animation-2-base-scale: 3;
+
+:host {
+    height: 100vh;
+    display: block;
+    position: relative;
+    
+    .content {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        .title {
+            position: absolute;
+            z-index: 5;
+            top: 25%;
+            text-align: center;
+            font-size: 2rem;
+            color: $text-color;
+            text-transform: uppercase;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .dots-1 {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    .background {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        overflow: hidden;
+
+        .glow-1 {
+            position: absolute;
+            border-radius: 50%;
+            box-shadow: 0 0 80px 30px #fff,  
+                        0 0 80px 70px $secondary-color, 
+                        0 0 300px 90px $primary-color; 
+            transform: scale($glow-animation-1-base-scale);
+            opacity: 0.8;
+            animation: glowAnimation1 10s linear 6s infinite;
+        }  
+
+        .glow-2 {
+            position: absolute;
+            z-index: 4;
+            bottom: 0;
+            right: 0;
+            box-shadow: 0 0 70px 30px #fff,  
+                        0 0 70px 60px $secondary-color, 
+                        0 0 200px 60px $primary-color;
+            border-radius: 50%;
+            transform: scale($glow-animation-2-base-scale);
+            opacity: 0.8;
+            animation: glowAnimation3 12s linear 6s infinite;
+        }
+    
+        .dark-background {
+            height: 100vh;
+            width: 100vw;
+            // width: $dark-background-width;
+            background-color: $dark-background-color;
+        }
+    
+        .gradient-background {
+            // height: 100vh;
+            // width: calc(100vw - #{$dark-background-width});
+            // background: $gradient-background-gradient;
+        }
+    }
+
+    @media (max-width: $mobile) {
+        .background {
+            .dark-background {
+                width: 100vw;
+            }
+        
+            .gradient-background {
+                display: none;
+            }
+        }
+    }
+}
+
+@mixin glow-animation($name, $base-scale) {
+    @keyframes #{$name} {
+        0% {
+            box-shadow: 0 0 70px 30px #fff,  
+                        0 0 70px 60px $secondary-color, 
+                        0 0 200px 60px $primary-color;
+            transform: scale($base-scale) rotate(0);
+        }
+        25% {
+            box-shadow: 0 0 70px 30px #fff,  
+                        0 0 70px 70px $secondary-color, 
+                        0 0 200px 70px $primary-color;
+            transform: scale(calc($base-scale - 1)) rotate(90deg);
+        }
+        50% {
+            box-shadow: 0 0 70px 30px #fff,  
+                        0 0 70px 50px $secondary-color, 
+                        0 0 200px 60px $primary-color;
+            transform: scale(calc($base-scale - 0.5)) rotate(180deg);
+        }
+        75% {
+            box-shadow: 0 0 70px 30px #fff,  
+                        0 0 200px 80px $secondary-color, 
+                        0 0 200px 70px $primary-color;
+            transform: scale(calc($base-scale - 1.2)) rotate(270deg);
+        }
+        100% {
+            box-shadow: 0 0 70px 30px #fff,  
+                        0 0 70px 60px $secondary-color, 
+                        0 0 200px 60px $primary-color;
+            transform: scale($base-scale) rotate(360deg);
+        }
+    }  
+}
+
+@include glow-animation(glowAnimation1, $glow-animation-1-base-scale);
+@include glow-animation(glowAnimation3, $glow-animation-2-base-scale);

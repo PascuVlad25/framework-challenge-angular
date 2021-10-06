@@ -1,0 +1,26 @@
+
+<div class="move-selectors-container">
+    <div *ngFor="let column of gameMatrix; index as i" class="move-selector-container">
+        <div 
+            class="move-selector" 
+            (click)="selectColumn(i)"
+            [@dropAnimation]="getMoveSelectorAnimationOptions(i)"
+        >
+            <div 
+                class="selector"
+                [ngClass]="getMoveSelectorClass(i)" 
+            ></div>
+        </div>
+    </div>
+        
+</div>
+<div class="game-matrix-container">
+    <img class="game-canvas" src="assets/images/game-canvas.svg">
+    <div class="game-matrix">
+        <div *ngFor="let column of gameMatrix; index as i" class="game-column">
+            <div #gameTile *ngFor="let tile of column" class="game-tile" [ngClass]="getTileColor(tile)"></div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,7 @@
+<div class="framework-name-container">
+    <div [@fadeInDown]="getDelayTime(i)" *ngFor="let letter of getFrameworkNameLetters(); index as i" class="letter">{{ letter }}</div>
+    <div class="logo">
+        <div class="bottom-fade"></div>
+        <img @fadeInUp class="angular-logo" src="assets/images/angular-logo.svg">
+    </div>
+</div>
