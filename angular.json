@@ -21,7 +21,8 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "docs",    
-            "deployUrl": "/framework-challenge-angular/",      
+            "deployUrl": "/framework-challenge-angular/",    
+            "baseHref": "https:/vladpascu.com/framework-challenge-angular/",  
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
