@@ -14,6 +14,8 @@ import { TodoCardComponent } from './todo-card/todo-card.component';
 import { AnimationDemoComponent } from './animation-demo/animation-demo.component';
 import { SliderComponent } from './slider/slider.component';
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { ToggleThemeButtonComponent } from './toggle-theme-button/toggle-theme-button.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
     declarations: [
@@ -27,10 +29,12 @@ import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
       TodoCardComponent,
       AnimationDemoComponent,
       SliderComponent,
+      ToggleThemeButtonComponent,
     ],
     imports: [
       CommonModule,
-      FontAwesomeModule
+      FontAwesomeModule,
+      FormsModule
     ],
     exports: [
       PresentationComponent,

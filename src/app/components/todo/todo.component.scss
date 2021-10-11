@@ -1,6 +1,5 @@
 @import 'src/styles';
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@600&display=swap');
-$card-spacing: 15px;
+$card-spacing: 25px;
 $header-height: 70px;
 
 :host {
@@ -8,17 +7,21 @@ $header-height: 70px;
     display: block;
     position: relative;
     font-family: 'Fira Sans', sans-serif;
-    background-color: white;
+    background-color: var(--background-color);
+    color: var(--font-color);
 
     .todo-header {
         height: $header-height;
         width: 100vw;
+        display: flex;
+        align-items: center;
         box-sizing: border-box;
         padding: 25px 0 10px 30px;
 
         .todo-title {
             font-size: 32px;
             font-weight: 600;
+            margin-right: 15px;
         }
     }
 
@@ -30,14 +33,14 @@ $header-height: 70px;
         .bottom-fade {
             position: absolute;
             height: 100px;
-            width: 60%;
+            width: 100%;
             bottom: 0;
             left: 0;
-            background: linear-gradient(0deg, white 20%, rgba(255, 255, 255, 0));
+            background: linear-gradient(0deg, var(--background-color) 20%, rgba(255, 255, 255, 0));
         }
 
         .group-container {
-            width: 60%;
+            flex: 1 1 auto;
             height: 100%;
             display: flex;
             flex-wrap: wrap;
@@ -50,20 +53,21 @@ $header-height: 70px;
 
             .todo-group {
                 width: 50%;
+                margin-bottom: 20px;
             }
         }
 
         .add-container {
-            width: 40%;
+            flex: 1 1 auto;
             height: 100%;
             border-radius: 20px 0 0 0;
-            background: $primary-gradient;
+            background: var(--foreground-color);
             box-shadow: -15px 0 30px -30px black;
         }        
 
         @media (max-width: $tablet) {
             .group-container {
-                width: 50%;
+                // width: 50%;
 
                 .todo-group {
                     width: 100%;
@@ -71,7 +75,7 @@ $header-height: 70px;
             }
 
             .add-container, .bottom-fade {
-                width: 50%;
+                // width: 50%;
             }
         }
 
@@ -83,9 +87,5 @@ $header-height: 70px;
                 display: none;
             }
         } 
-    }
-
-    .arrow-down.black {
-        background-image: url('/assets/icons/chevron_down_black.svg');
     }
 }

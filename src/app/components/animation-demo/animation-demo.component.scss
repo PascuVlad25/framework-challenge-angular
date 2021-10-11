@@ -1,62 +1,88 @@
+@import 'src/styles';
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@600&display=swap');
 $screen-height: 216px;
 $screen-width: 384px;
 $frame-border: 5px;
 
-.container {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    overflow: hidden;
+:host {
+  --screen-height: 216px;
+  --screen-width: 384px;
+  
+  @media (max-width: $mobile) {
+    --screen-height: 384px;
+    --screen-width: 216px;
+  } 
 
-    .animation-container {
-        height: $screen-height;
-        width: $screen-width;
-        position: relative;
+    .container {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      border-radius: 20px;
+      overflow: hidden;
 
-        .frame {
-            top: -$frame-border;
-            left: -$frame-border;
-            position: absolute;
-            z-index: 2;
-            height: $screen-height;
-            width: $screen-width;
-            border: $frame-border solid black;
+      .animation-container {
+          height: var(--screen-height);
+          width: var(--screen-width);
+          position: relative;
 
-        }
+          .frame {
+              top: -$frame-border;
+              left: -$frame-border;
+              position: absolute;
+              z-index: 2;
+              height: var(--screen-height);
+              width: var(--screen-width);
+              border: $frame-border solid black;
 
-        .screens-container {
-            top: 0;
-            left: 0;
-            position: absolute;
-            z-index: 1;
-            display: flex;
-            animation: slide 6s infinite;
+          }
 
-            .screen {
-                height: $screen-height;
-                width: $screen-width;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: white;
-                font-size: 24px;
-                font-family: 'Fira Sans', sans-serif;
-                animation: scale 3s infinite cubic-bezier(0,1,1,1);
+          .screens-container {
+              top: 0;
+              left: 0;
+              position: absolute;
+              z-index: 1;
+              display: flex;
+              animation: slide 6s infinite;
 
-                &.screen-1 {
-                    background-color: rgb(236, 56, 56);
-                }
+              .screen {
+                  height: var(--screen-height);
+                  width: var(--screen-width);
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  color: white;
+                  font-size: 24px;
+                  font-family: 'Fira Sans', sans-serif;
+                  animation: scale 3s infinite cubic-bezier(0,1,1,1);
 
-                &.screen-2 {
-                    background-color: rgb(61, 61, 238);
-                }
-            }
-        }
-    }
+                  &.screen-1 {
+                      background-color: rgb(236, 56, 56);
+                  }
+
+                  &.screen-2 {
+                      background-color: rgb(61, 61, 238);
+                  }
+              }
+          }
+      }
+  }
+}
+
+@keyframes slide {
+  25% {
+    animation-timing-function: ease-out;
+    transform: translateX(calc(0px - var(--screen-width)));
+  }
+  50% {
+    transform: translateX(calc(0px - var(--screen-width)));
+  }
+  75% {
+    animation-timing-function: ease-out;
+    transform: translateX(0);
+  }
 }
 
 @keyframes scale {
@@ -72,16 +98,4 @@ $frame-border: 5px;
   }
 }
 
-@keyframes slide {
-  25% {
-    animation-timing-function: ease-out;
-    transform: translateX(-#{$screen-width});
-  }
-  50% {
-    transform: translateX(-#{$screen-width});
-  }
-  75% {
-    animation-timing-function: ease-out;
-    transform: translateX(0);
-  }
-}
+  

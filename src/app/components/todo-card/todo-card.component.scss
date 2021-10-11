@@ -1,24 +1,61 @@
 @import 'src/styles';
-$card-height: 60px;
+$card-height: 100px;
 $card-width: 350px;
-$card-spacing: 15px;
+$card-spacing: 20px;
 
 .card {
     display: flex;
     align-items: center;
-    background-color: white;
-    color: black;
     border-radius: 10px;
     height: $card-height;
     margin: $card-spacing;
-    box-shadow: 0px 5px 20px -5px #00000033;
+    box-shadow: 0px 3px 10px -5px rgba(0,0,0,0.3);
+    background-color: var(--foreground-color);
+    overflow: hidden;
 
     .color-border {
-        height: 90%;
-        width: 5px;
-        margin: 5% 10px;
-        border-radius: 10px;
+        height: 100%;
+        width: 6px;
         background: $primary-gradient;
+
+        &.gradient-1 {
+            background: $gradient-1;
+        }
+
+        &.gradient-2 {
+            background: $gradient-2;
+        }
+        
+        &.gradient-3 {
+            background: $gradient-3;
+        }
+
+        &.gradient-4 {
+            background: $gradient-4;
+        }
+        
+        &.gradient-5 {
+            background: $gradient-5;
+        }
+    }
+
+    .checkbox {
+        margin: 0 15px;
+        cursor: pointer;
+    }
+
+    .card-details {
+        padding-right: 20px;
+
+        .title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .description {
+            font-size: 14px;
+            color: $gray;
+        }
     }
 
     &.add-card {
@@ -34,4 +71,19 @@ $card-spacing: 15px;
             background-color: rgb(139, 139, 139);
         }
     }
+
+    &.completed {
+        .title {
+            color: var(--disabled-color);
+            text-decoration: line-through;
+        }
+    }
 }
+
+
+
+@media (max-width: $mobile) {
+    .card {
+        margin: $card-spacing 0;
+    }
+} 

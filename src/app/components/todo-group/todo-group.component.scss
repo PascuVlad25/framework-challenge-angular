@@ -1,0 +1,40 @@
+@import 'src/styles';
+
+.group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    .group-title {
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: 600;
+    
+        .tasks-count {
+            margin-left: 6px;
+            font-size: 14px;
+            font-weight: 400;
+            color: $gray;
+        }
+    }
+
+    .toggle {
+        margin-right: 20px;
+        font-size: 14px;
+        color: $primary-blue;
+        cursor: pointer;
+
+        &:hover {
+            color: $secondary-blue;
+        }
+    }
+}
+
+
+@media (max-width: $mobile) {
+    .group-header {
+        .group-title {
+            margin-left: 0;
+        }
+    }
+} 

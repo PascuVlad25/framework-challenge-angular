@@ -1,5 +1,7 @@
-<div>
-    <span class="group-title">{{ title }}</span>
-    <span *ngIf="isListLong()" (click)="toggleList()">{{ getToggleText() }}</span>
+<div class="group-header">
+    <span class="group-title">{{ title }} 
+        <span class="tasks-count">{{ getTasksCount() }}</span>
+    </span>
+    <span *ngIf="isListLong()" (click)="toggleList()" class="toggle">{{ getToggleText() }}</span>
 </div>
-<app-todo-card *ngFor="let todo of todos" [todo]="todo"></app-todo-card>
+<app-todo-card *ngFor="let todo of getTodos()" [todo]="todo"></app-todo-card>

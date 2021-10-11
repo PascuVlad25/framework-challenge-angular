@@ -8,6 +8,7 @@ import { Todo } from '../todo/models';
 })
 export class TodoCardComponent implements OnInit {
   @Input() todo!: Todo;
+  @Input() todoIndex!: number;
 
   constructor() { }
 

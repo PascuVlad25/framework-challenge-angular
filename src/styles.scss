@@ -1,40 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap');
 
-html {
-    scroll-behavior: smooth;
-    
-    body {
-        margin: 0;
-    }
-}
-
-.arrow-down {
-    display: block;
-    position: absolute;
-    z-index: 3;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 50px;
-    height: 50px;
-    background-image: url('/assets/icons/chevron_down.svg');
-    background-size: contain;
-    cursor: pointer;
-    animation: floating-arrow 3s ease-in-out infinite;
-}
-
-@keyframes floating-arrow {
-    0% {
-        transform: translateY(0);
-    }
-    50% {        
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
 
 /* Variables */
 $primary-color: #DD0031;
@@ -46,10 +12,50 @@ $primary-blue: #4270FB;
 $secondary-blue: #1D43FE;
 $primary-gradient: linear-gradient($primary-blue, $secondary-blue);
 
+$gradient-1: linear-gradient(135deg, #00c6fb 0%, #005bea 100%);;
+$gradient-2: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);;
+$gradient-3: linear-gradient(135deg, #3cba92 0%, #0ba360 100%);
+$gradient-4: linear-gradient(135deg, #c471f5 0%, #fa71cd 100%);
+$gradient-5: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 
+
+$gray: #878787;
+
+/* dark theme */
 $dark-background-color: #15141c;
+$dark-foreground-color: #24232a;
+$dark-font-color: white;
+$disabled-color-dark: #3f3f4a;
+
+/* light theme */
+$light-background-color: #f2f4f6;
+$light-foreground-color: white;
+$light-font-color: #1a1a1b;
+$disabled-color-light: #dddddd;
 
 
 /* Media queries */
 $mobile: 500px;
 $tablet: 900px;
+
+
+html {
+    scroll-behavior: smooth;
+    
+    body {
+        margin: 0;
+
+        &.light {
+            --background-color: #{$light-background-color};
+            --foreground-color: #{$light-foreground-color};
+            --font-color: #{$light-font-color};
+            --disabled-color: #{$disabled-color-light};
+        }
+        &.dark {
+            --background-color: #{$dark-background-color};
+            --foreground-color: #{$dark-foreground-color};
+            --font-color: #{$dark-font-color};
+            --disabled-color: #{$disabled-color-dark};
+        }
+    }
+}

@@ -1,20 +1,11 @@
 <div class="todo-header">
-    <span class="todo-title">1. Todo List</span>
+    <span class="todo-title">
+        1. Todo List        
+    </span>
+    <app-toggle-theme-button></app-toggle-theme-button>
 </div>
 <div class="container">
-    <div class="group-container">
-        <!-- <div class="card" [ngClass]="card.color" *ngFor="let card of cards">
-            <div class="color-border"></div>
-            <div>
-                <div class="title">{{ card.title }}</div>
-                <div class="description">{{ card.description }}</div>
-                <span class="icon"></span>
-            </div>
-        </div> -->
-        <!-- <div class="card add-card" (click)="addCard()">
-            +
-        </div> -->
-    
+    <div class="group-container">    
         <app-todo-group 
             *ngFor="let group of getGroups()"
             [title]="group.title"
@@ -23,7 +14,7 @@
         ></app-todo-group>
         <div class="bottom-fade"></div>
     </div>
-    <div class="add-container">
+    <!-- <div class="add-container">
 
-    </div>
+    </div> -->
 </div>

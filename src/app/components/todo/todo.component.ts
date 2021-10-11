@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Todo, TodoGroup } from './models';
 
 @Component({
@@ -8,9 +8,9 @@ import { Todo, TodoGroup } from './models';
 })
 export class TodoComponent {
   public cards = [
-    {title: 'Create website', description: 'Dunno man', icon: 'rocket', color: 'blue'},
-    {title: 'Take a break', description: 'Dunno man', icon: 'sleep', color: 'purple'},
-    {title: 'Grocery shopping', description: 'Dunno man', icon: 'cart', color: 'green'},
+    {title: 'Create website', description: 'Dunno man', icon: 'rocket', color: 'gradient-1'},
+    {title: 'Take a break', description: 'Dunno man', icon: 'sleep', color: 'gradient-2'},
+    {title: 'Grocery shopping', description: 'Dunno man', icon: 'cart', color: 'gradient-3'},
   ];
   public groups: TodoGroup[] = [
     {
@@ -21,8 +21,10 @@ export class TodoComponent {
         return todo.deadline === today;
       },
       todos: [
-        new Todo('Debug the app', new Date(), 'gradient-red'),
-        new Todo('Order chinesse food', new Date(), 'gradient-blue')
+        new Todo('Debug the app', 'Try to find all the bugs! Regression needed.', new Date(), 'gradient-1'),
+        new Todo('Order chinesse food', 'Sushikage - 0791-897-15x. 10x Maki Avocado, 10x California Rolls, 1x Miso Ramen + Nigiri', new Date(), 'gradient-2'),
+        {...new Todo('Send files to Dan', 'Excel documents with statistics and the pdf file', new Date(), 'gradient-1'), completed: true },
+        {...new Todo('Call grandma', 'It\'s family time yo know', new Date(), 'gradient-3'), completed: true }
       ]
     },
     {
@@ -34,7 +36,8 @@ export class TodoComponent {
         return todo.deadline === tomorrow;
       },
       todos: [
-        new Todo('Feed the cat', new Date(), 'gradient-red')
+        new Todo('Feed the cat', 'You don\'t want Fritzy boi to be grumpy.', new Date(), 'gradient-3'),
+        {...new Todo('Watch a movie', 'Watchlist: Forest Gump, The Godfather, Pulp Fiction', new Date(), 'gradient-5'), completed: true},
       ]
     },
     {
@@ -46,7 +49,7 @@ export class TodoComponent {
         return todo.deadline === tomorrow;
       },
       todos: [
-        new Todo('Watch React tutorial', new Date(), 'gradient-blue'),
+        new Todo('Watch React tutorial', 'The advance guide regarding React Hooks and Redux', new Date(), 'gradient-4'),
       ]
     },
     {
@@ -58,8 +61,8 @@ export class TodoComponent {
         return todo.deadline === tomorrow;
       },
       todos: [
-        new Todo('Watch a movie', new Date(), 'gradient-blue'),
-        new Todo('Finish Angular app', new Date(), 'gradient-red'),
+        new Todo('Watch a movie', 'Watchlist: Forest Gump, The Godfather, Pulp Fiction', new Date(), 'gradient-2'),
+        new Todo('Finish Angular app', 'Don\'t forget to add that shiny animation!!!', new Date(), 'gradient-3'),
       ]
     }
   ]
@@ -76,7 +79,7 @@ export class TodoComponent {
 
   public addCard(): void {
     this.cards.push({
-      title: 'Grocery shopping', description: 'Dunno man', icon: 'cart', color: 'green'
+      title: 'Grocery shopping', description: 'Dunno man', icon: 'cart', color: 'gradient-1'
     })
   }
 }
