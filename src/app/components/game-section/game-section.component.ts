@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { faRobot, faPeopleArrows } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
 import { GameService } from 'src/app/services';
 import { GameMode, GameStatus } from '../game/enums';
@@ -11,6 +12,9 @@ import { GameMode, GameStatus } from '../game/enums';
 export class GameSectionComponent implements OnInit, OnDestroy {
     private gameStatus: GameStatus = GameStatus.NotStarted;
     private subscriptions: Subscription[] = [];
+
+    public robotIcon = faRobot;
+    public duelIcon = faPeopleArrows;
 
     constructor(private gameService: GameService) { }
 

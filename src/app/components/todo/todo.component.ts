@@ -7,11 +7,6 @@ import { Todo, TodoGroup } from './models';
   styleUrls: ['./todo.component.scss']
 })
 export class TodoComponent {
-  public cards = [
-    {title: 'Create website', description: 'Dunno man', icon: 'rocket', color: 'gradient-1'},
-    {title: 'Take a break', description: 'Dunno man', icon: 'sleep', color: 'gradient-2'},
-    {title: 'Grocery shopping', description: 'Dunno man', icon: 'cart', color: 'gradient-3'},
-  ];
   public groups: TodoGroup[] = [
     {
       title: 'Today', 
@@ -75,11 +70,5 @@ export class TodoComponent {
 
   public isGroupDisplayed(group: TodoGroup): boolean {
     return group.todos.length > 0;
-  }
-
-  public addCard(): void {
-    this.cards.push({
-      title: 'Grocery shopping', description: 'Dunno man', icon: 'cart', color: 'gradient-1'
-    })
   }
 }

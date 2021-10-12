@@ -1,16 +1,18 @@
 <div class="content">
-    <div class="details-container">
-        <div class="title">The Game</div>
+    <div *ngIf="!hasGameStarted()" class="details-container">
+        <div class="title">2. The Game</div>
         <div class="buttons-container">
-            <span *ngIf="!hasGameStarted()" class="start-button" (click)="startBotGame()">
-                Start Game <br> Player vs Bot
+            <span class="start-button" (click)="startBotGame()">
+                <fa-icon [icon]="robotIcon"></fa-icon>
+                <span>Start Game <br> Player vs Bot</span>
             </span>
-            <span *ngIf="!hasGameStarted()" class="start-button" (click)="startPlayerGame()">
-                Start Game <br> Player vs Player
+            <span class="start-button" (click)="startPlayerGame()">
+                <fa-icon [icon]="duelIcon"></fa-icon>
+                <span>Start Game <br> Player vs Player</span>
             </span>
         </div>
     </div>
-    <div class="game-container">
+    <div *ngIf="hasGameStarted()" class="game-container">
         <app-game></app-game>
     </div>
 </div>
