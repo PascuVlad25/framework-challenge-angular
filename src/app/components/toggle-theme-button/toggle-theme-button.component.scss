@@ -11,7 +11,11 @@
     box-shadow: 0px 3px 10px -5px rgba(0,0,0,0.3);
     cursor: pointer;
 
-    .sun {
-        color: rgb(255, 133, 46);
+    fa-icon {
+        display: flex;
+
+        &.sun {
+            color: rgb(255, 133, 46);
+        }
     }
 }

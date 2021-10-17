@@ -1,3 +1,7 @@
+<span class="header">
+    <span *ngIf="hasGameStarted()" class="header-title">2. The Game</span>
+    <app-toggle-theme-button></app-toggle-theme-button>
+</span>
 <div class="content">
     <div *ngIf="!hasGameStarted()" class="details-container">
         <div class="title">2. The Game</div>

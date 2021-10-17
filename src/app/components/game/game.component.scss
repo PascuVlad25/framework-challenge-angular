@@ -1,5 +1,5 @@
-$text-color: #1B1D27;
-$background-color: rgb(235, 235, 235);
+@import '/src/styles.scss';
+
 $player1-color: yellow;
 $player2-color: orange;
 $border-radius: 50px;
@@ -32,7 +32,7 @@ $border-radius: 50px;
 
                 .selector{
                     flex: 1 1 auto;
-                    background-color: gray;
+                    background-color: var(--gray);
                     cursor: pointer;
                     border-radius: $border-radius;
                     margin: 10%;
@@ -102,8 +102,5 @@ $border-radius: 50px;
                 }        
             }
         }
-    }
-
-    .circle {
     }
 }

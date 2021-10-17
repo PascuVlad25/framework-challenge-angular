@@ -1,12 +1,29 @@
 <div class="container">
+    <div class="animation-header">
+        <span class="title">3. Animations</span>
+        <app-toggle-theme-button></app-toggle-theme-button>
+    </div>
     <div class="animation-container">
-        <div class="frame"></div>
+        <div class="frame" [ngClass]="{'dark': isDark}">
+        </div>
         <div class="screens-container">
             <span class="screen screen-1">
-                Screen 1
+                <fa-icon [icon]="dizzyEmoji"></fa-icon>
+            </span>
+            <span class="screen screen-3">
+                <fa-icon [icon]="starsEmoji"></fa-icon>
             </span>
             <span class="screen screen-2">
-                Screen 2
+                <fa-icon [icon]="laughEmoji"></fa-icon>
+            </span>
+            <span class="screen screen-5">
+                <fa-icon [icon]="winkEmoji"></fa-icon>
+            </span>
+            <span class="screen screen-4">
+                <fa-icon [icon]="heartEmoji"></fa-icon>
+            </span>
+            <span class="screen screen-1">
+                <fa-icon [icon]="tongueEmoji"></fa-icon>
             </span>
         </div>
     </div>

@@ -18,20 +18,24 @@ $gradient-3: linear-gradient(135deg, #3cba92 0%, #0ba360 100%);
 $gradient-4: linear-gradient(135deg, #c471f5 0%, #fa71cd 100%);
 $gradient-5: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 
-
-$gray: #878787;
+$true-black: #121212;
+$true-white: #fff;
 
 /* dark theme */
 $dark-background-color: #15141c;
+$dark-background-color-rgb: 21, 20, 28;
 $dark-foreground-color: #24232a;
 $dark-font-color: white;
 $disabled-color-dark: #3f3f4a;
 
 /* light theme */
 $light-background-color: #f2f4f6;
+$light-background-color-rgb: 242, 244, 246;
 $light-foreground-color: white;
 $light-font-color: #1a1a1b;
 $disabled-color-light: #dddddd;
+$gray: #bebebe;
+$slider-background-color: #e5e7eb;
 
 
 /* Media queries */
@@ -47,15 +51,27 @@ html {
 
         &.light {
             --background-color: #{$light-background-color};
+            --background-color-rgb: #{$light-background-color-rgb};
             --foreground-color: #{$light-foreground-color};
             --font-color: #{$light-font-color};
             --disabled-color: #{$disabled-color-light};
+            --slider-background-color: #{$slider-background-color};
+            --gray: #{$gray};
+            --slider-background: #{$true-black};
+            --slider-font-color: #{$true-white};
+            --slider-font-color-idle: #{$disabled-color-light};
         }
         &.dark {
             --background-color: #{$dark-background-color};
+            --background-color-rgb: #{$dark-background-color-rgb};
             --foreground-color: #{$dark-foreground-color};
             --font-color: #{$dark-font-color};
             --disabled-color: #{$disabled-color-dark};
+            --slider-background-color: #{$dark-foreground-color};
+            --gray: #{$dark-foreground-color};
+            --slider-background: #{$true-white};
+            --slider-font-color: #{$true-black};
+            --slider-font-color-idle: #{$disabled-color-dark};
         }
     }
 }

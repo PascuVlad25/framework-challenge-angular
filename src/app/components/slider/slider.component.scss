@@ -1,15 +1,17 @@
+@import '/src/styles.scss';
 
 .slide-buttons-container {
     width: 60px;
-    height: 40px;
+    height: 35px;
     
     margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background: #121212;
-    color: rgb(211, 211, 211);
-    border-radius: 20px;
+    background: var(--slider-background);
+    color: var(--slider-font-color-idle);
+    border-radius: 20px;    
+    box-shadow: 0px 0px 30px -14px var(--background-color);
 
     .slide-button {
         cursor: pointer;
@@ -17,7 +19,7 @@
 
         &:hover {
             transform: scale(1.1);
-            color: white;
+            color: var(--slider-font-color);
         }
     }
 }
