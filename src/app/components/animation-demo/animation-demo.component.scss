@@ -53,18 +53,18 @@ $phone-top-border: 10px;
               left: calc((var(--device-width) - var(--screen-width)) / -2);
               height: var(--device-height);
               width: var(--device-width);
-              background-image: url('/assets/images/macbook-frame.png');
+              background-image: url('~src/assets/images/macbook-frame.png');
               background-repeat: no-repeat;
 
               &.dark {
-                background-image: url('/assets/images/macbook-frame-dark.png');
+                background-image: url('~src/assets/images/macbook-frame-dark.png');
               }
 
               @media (max-width: $mobile) {
-                background-image: url('/assets/images/iphone-frame-light.png');
+                background-image: url('~src/assets/images/iphone-frame-light.png');
 
                 &.dark {
-                  background-image: url('/assets/images/iphone-frame-dark.png');
+                  background-image: url('~src/assets/images/iphone-frame-dark.png');
                 }
               } 
           }
