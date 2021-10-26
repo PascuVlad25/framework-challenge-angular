@@ -1,13 +1,17 @@
 @import 'src/styles';
-$screen-height: 216px;
-$screen-width: 384px;
 $laptop-width: 500px;
 $laptop-height: 288px;
 $laptop-top-border: 16px;
+$phone-width: 200px;
+$phone-height: 402px;
+$phone-top-border: 10px;
 
 :host {
   --screen-height: 240px;
   --screen-width: 384px;
+  --device-width: #{$laptop-width};
+  --device-height: #{$laptop-height};
+  --device-top-border: #{$laptop-top-border};
   --screen-carousel-offset: calc(-2 * var(--screen-width));
 
   font-family: 'Fira Sans', sans-serif;
@@ -43,17 +47,26 @@ $laptop-top-border: 16px;
           position: relative;
 
           .frame {
-              top: -$laptop-top-border;
-              left: calc((#{$laptop-width} - #{$screen-width}) / -2);
               position: absolute;
               z-index: 2;
-              height: $laptop-height;
-              width: $laptop-width;
-              background: url('/assets/images/macbook-frame.png');
+              top: calc(0px - var(--device-top-border));
+              left: calc((var(--device-width) - var(--screen-width)) / -2);
+              height: var(--device-height);
+              width: var(--device-width);
+              background-image: url('/assets/images/macbook-frame.png');
+              background-repeat: no-repeat;
 
               &.dark {
-                background: url('/assets/images/macbook-frame-dark.png');
+                background-image: url('/assets/images/macbook-frame-dark.png');
               }
+
+              @media (max-width: $mobile) {
+                background-image: url('/assets/images/iphone-frame-light.png');
+
+                &.dark {
+                  background-image: url('/assets/images/iphone-frame-dark.png');
+                }
+              } 
           }
 
           .screens-container {
@@ -107,7 +120,10 @@ $laptop-top-border: 16px;
   
   @media (max-width: $mobile) {
     --screen-height: 384px;
-    --screen-width: 216px;
+    --screen-width: 175px;
+    --device-width: #{$phone-width};
+    --device-height: #{$phone-height};
+    --device-top-border: #{$phone-top-border};
   } 
 }
 
