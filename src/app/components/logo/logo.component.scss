@@ -23,8 +23,8 @@ $text-color: #ffffff;
     }
 
     .logo {
-        width: 25%;
-        height: 55%;
+        width: 40vmin;
+        height: 55vmin;
         position: absolute;
         z-index: 0;
         display: flex;
@@ -35,6 +35,10 @@ $text-color: #ffffff;
             z-index: 3;
             width: 100%;
             height: 100%;
+
+            @media (max-width: $mobile) {
+                box-shadow: inset 0px -200px 50px -60px $dark-background-color;
+            }
         }
 
         .angular-logo {

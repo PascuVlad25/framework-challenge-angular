@@ -20,23 +20,6 @@ $gradient-background-gradient: linear-gradient(60deg, #dd0031, #f1683e);
         display: flex;
         justify-content: center;
         align-items: center;
-    
-        .title {
-            position: absolute;
-            z-index: 5;
-            top: 25%;
-            text-align: center;
-            font-size: 2rem;
-            color: $text-color;
-            text-transform: uppercase;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-
-        .dots-1 {
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
     }
 
     .background {
