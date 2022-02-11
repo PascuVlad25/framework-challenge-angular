@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap');
 
 
-/* Variables */
+/* Font Varibles */
+$fira-sans: 'Fira Sans', sans-serif;
+
+/* Color variables */
 $primary-color: #DD0031;
 $secondary-color: #f05526;
 $gradient-background-gradient: linear-gradient(60deg, $primary-color, $secondary-color);
@@ -49,18 +52,17 @@ html {
     body {
         margin: 0;
 
-        &.light {
-            --background-color: #{$light-background-color};
-            --background-color-rgb: #{$light-background-color-rgb};
-            --foreground-color: #{$light-foreground-color};
-            --font-color: #{$light-font-color};
-            --disabled-color: #{$disabled-color-light};
-            --slider-background-color: #{$slider-background-color};
-            --gray: #{$gray};
-            --slider-background: #{$true-black};
-            --slider-font-color: #{$true-white};
-            --slider-font-color-idle: #{$disabled-color-light};
-        }
+        --background-color: #{$light-background-color};
+        --background-color-rgb: #{$light-background-color-rgb};
+        --foreground-color: #{$light-foreground-color};
+        --font-color: #{$light-font-color};
+        --disabled-color: #{$disabled-color-light};
+        --slider-background-color: #{$slider-background-color};
+        --gray: #{$gray};
+        --slider-background: #{$true-black};
+        --slider-font-color: #{$true-white};
+        --slider-font-color-idle: #{$disabled-color-light};
+        
         &.dark {
             --background-color: #{$dark-background-color};
             --background-color-rgb: #{$dark-background-color-rgb};
@@ -72,6 +74,29 @@ html {
             --slider-background: #{$true-white};
             --slider-font-color: #{$true-black};
             --slider-font-color-idle: #{$disabled-color-dark};
+        }
+
+        
+        .gradients {
+            &.gradient-1 {
+                background: $gradient-1;
+            }
+
+            &.gradient-2 {
+                background: $gradient-2;
+            }
+            
+            &.gradient-3 {
+                background: $gradient-3;
+            }
+
+            &.gradient-4 {
+                background: $gradient-4;
+            }
+            
+            &.gradient-5 {
+                background: $gradient-5;
+            }
         }
     }
 }

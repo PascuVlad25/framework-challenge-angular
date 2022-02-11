@@ -1,6 +1,6 @@
 <div class="card" [ngClass]="{'completed' : todo?.completed}">
-    <span class="color-border" [ngClass]="getColor()"></span>
-    <input type="checkbox" [(ngModel)]="todo.completed" class="checkbox">
+    <span class="color-border gradients" [ngClass]="getColor()"></span>
+    <app-checkbox [(isCompleted)]="todo.completed" [color]="todo?.color"></app-checkbox>
     <div class="card-details">
         <div class="title">{{ todo?.title }}</div>
         <div class="description">{{ todo?.description }}</div>

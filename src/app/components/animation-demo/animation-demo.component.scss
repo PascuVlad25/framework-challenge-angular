@@ -15,7 +15,6 @@ $phone-top-border: 10px;
   --screen-carousel-offset: calc(-2 * var(--screen-width));
 
   font-family: 'Fira Sans', sans-serif;
-  background-color: var(--background-color);
   color: var(--font-color);
 
     .container {
@@ -26,6 +25,7 @@ $phone-top-border: 10px;
       justify-content: center;
       position: relative;
       overflow: hidden;
+      background-color: var(--background-color);
 
       .animation-header {
         position: absolute;

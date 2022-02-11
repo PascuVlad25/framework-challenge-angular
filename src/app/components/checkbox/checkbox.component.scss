@@ -1,0 +1,24 @@
+@import 'src/styles';
+
+.checkbox {
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $dark-foreground-color;
+    border-radius: 3px;
+    margin: 15px;
+    cursor: pointer;
+
+    &.checked {
+        border: 1px solid transparent;
+
+        fa-icon {
+            color: white;
+            font-size: 11px;
+            height: 11px;
+            width: 11px;
+        }
+    }
+}

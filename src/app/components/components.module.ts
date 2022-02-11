@@ -16,6 +16,7 @@ import { SliderComponent } from './slider/slider.component';
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { ToggleThemeButtonComponent } from './toggle-theme-button/toggle-theme-button.component';
 import { FormsModule } from "@angular/forms";
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 @NgModule({
     declarations: [
@@ -30,6 +31,7 @@ import { FormsModule } from "@angular/forms";
       AnimationDemoComponent,
       SliderComponent,
       ToggleThemeButtonComponent,
+      CheckboxComponent,
     ],
     imports: [
       CommonModule,

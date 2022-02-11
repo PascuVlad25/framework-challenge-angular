@@ -1,11 +1,12 @@
 <div class="slider-container" [@fade]="currentPageIndex">
     <app-slider></app-slider>
 </div>
-<div class="main-container">
-    <div [@slide]="currentPageIndex" class="carousel-container">
+<div [@routeAnimations]="prepareRoute(outlet)" class="main-container">
+    <router-outlet #outlet="outlet"></router-outlet>
+    <!-- <div [@slide]="currentPageIndex" class="carousel-container">
         <app-presentation [@scale]="currentPageIndex"></app-presentation>
         <app-todo [@scale]="currentPageIndex"></app-todo>
         <app-game-section [@scale]="currentPageIndex"></app-game-section>
         <app-animation-demo [@scale]="currentPageIndex"></app-animation-demo>
-    </div>
+    </div> -->
 </div>
